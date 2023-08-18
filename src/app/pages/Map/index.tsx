@@ -11,9 +11,9 @@ export default function MapPage() {
       mobileLarge={12}
       mobileSmall={12}
       sx={{
-        minHeight: {
+        height: {
           desktop: "100%",
-          laptop: "50%",
+          laptop: "100%",
           tablet: "50%",
           mobileLarge: "100%",
           mobileMedium: "100%",

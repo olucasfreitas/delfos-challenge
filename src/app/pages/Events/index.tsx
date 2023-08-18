@@ -302,9 +302,10 @@ export default function EventsPage() {
       mobileSmall={12}
       sx={{
         padding: "25px 17px",
-        minHeight: {
+        overflowY: "auto",
+        height: {
           desktop: "100%",
-          laptop: "50%",
+          laptop: "100%",
           tablet: "50%",
           mobileLarge: "100%",
           mobileMedium: "100%",

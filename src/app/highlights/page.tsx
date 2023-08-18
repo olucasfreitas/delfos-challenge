@@ -29,7 +29,7 @@ export default function Highlights() {
           container
           columns={12}
           sx={{
-            minHeight: {
+            height: {
               desktop: "100%",
               laptop: "100%",
               tablet: "100%",
