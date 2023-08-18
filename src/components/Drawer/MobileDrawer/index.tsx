@@ -25,10 +25,6 @@ export default function MobileDrawer() {
   const pathname = usePathname();
   const [open, setOpen] = React.useState(false);
 
-  React.useEffect(() => {
-    console.log(isMobileDrawerOpen);
-  }, [isMobileDrawerOpen]);
-
   return (
     <Drawer
       variant="temporary"

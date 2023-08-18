@@ -133,7 +133,7 @@ const StyledTableContainer = styled((props: TableContainerProps) => (
 export default function BasicTable() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
-  const handleClick = (event) => {
+  const handleClick = (event: any) => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {

@@ -160,6 +160,7 @@ function MiniDrawer() {
       handleOpenAndCloseMiniDrawer(false);
       changeMiniDrawerState(false);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLaptop]);
 
   return (
