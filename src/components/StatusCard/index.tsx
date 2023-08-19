@@ -3,16 +3,19 @@ import { Box, Divider, Paper, Typography, styled } from "@mui/material";
 import Image from "next/image";
 
 const Container = styled(Box)(({ theme }) => ({
-  position: "relative",
-  top: "16px",
-  margin: "0 17px",
+  position: "absolute",
   zIndex: 1,
-  height: "128px",
+  top: "17px",
+  left: "17px",
+  right: "17px",
   backgroundColor: "#fff",
   padding: "16px",
   borderRadius: "4px",
+  display: "flex",
+  flexDirection: "column",
+  gap: "16px",
   [theme.breakpoints.down("desktop")]: {
-    height: "auto",
+    gap: "16px",
   },
 }));
 
@@ -31,12 +34,10 @@ const BottomBox = styled(Box)(({ theme }) => ({
   display: "flex",
   alignItems: "flex-end",
   justifyContent: "space-between",
-  height: "50%",
   gap: "8px",
   [theme.breakpoints.down("desktop")]: {
     alignItems: "center",
     flexWrap: "wrap",
-    marginTop: "10px",
   },
 }));
 
@@ -45,9 +46,7 @@ const TopBoxText = styled(Typography)(({ theme }) => ({
   fontSize: "20px",
   lineHeight: "24px",
   color: "#0B1C2C",
-  [theme.breakpoints.down("desktop")]: {
-    width: "40%",
-  },
+  width: "50%",
   [theme.breakpoints.down("mobileMedium")]: {
     width: "100%",
     textAlign: "center",
@@ -58,9 +57,7 @@ const TopBoxContent = styled(Box)(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "space-evenly",
-  [theme.breakpoints.down("desktop")]: {
-    width: "60%",
-  },
+  width: "50%",
   [theme.breakpoints.down("mobileMedium")]: {
     width: "100%",
   },
@@ -98,18 +95,19 @@ const MiniBoxLeftText = styled(Typography)(({ theme }) => ({
 const MiniCard = styled(Box)(({ theme }) => ({
   display: "flex",
   backgroundColor: "#EFF2F4",
+  alignItems: "center",
+  justifyContent: "space-between",
+  borderRadius: "4px",
+  width: "130px",
   height: "32px",
-  width: "25%",
-  [theme.breakpoints.down("desktop")]: {
-    width: "45%",
-  },
 }));
 
 const MiniCardLeftText = styled(Typography)(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  width: "30%",
+  width: "32px",
+  height: "100%",
   backgroundColor: "#E5E9EE",
   fontWeight: 600,
   fontSize: "14px",
@@ -122,8 +120,8 @@ const MiniCardRightBox = styled(Box)(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
-  width: "100%",
-  padding: "0 10px",
+  width: "98px",
+  padding: "6px 4px 6px 4px",
 }));
 
 const MiniCardRightText = styled(Typography)(({ theme }) => ({
@@ -131,6 +129,7 @@ const MiniCardRightText = styled(Typography)(({ theme }) => ({
   fontSize: "14px",
   lineHeight: "17px",
   color: "#0B1C2C",
+  marginRight: "2px",
 }));
 
 function StatusCard() {
@@ -195,7 +194,7 @@ function StatusCard() {
           </MiniCardLeftText>
           <MiniCardRightBox>
             <MiniCardRightText>Sem sinal</MiniCardRightText>
-            <ChevronRightIcon width={18} stroke="#9194A7" strokeWidth="3" />
+            <ChevronRightIcon width={20} stroke="#9194A7" strokeWidth="3" />
           </MiniCardRightBox>
         </MiniCard>
         <MiniCard>
@@ -209,7 +208,7 @@ function StatusCard() {
           </MiniCardLeftText>
           <MiniCardRightBox>
             <MiniCardRightText>Parado</MiniCardRightText>
-            <ChevronRightIcon width={18} stroke="#9194A7" strokeWidth="3" />
+            <ChevronRightIcon width={20} stroke="#9194A7" strokeWidth="3" />
           </MiniCardRightBox>
         </MiniCard>
         <MiniCard>
@@ -223,7 +222,7 @@ function StatusCard() {
           </MiniCardLeftText>
           <MiniCardRightBox>
             <MiniCardRightText>M.Corretiva</MiniCardRightText>
-            <ChevronRightIcon width={18} stroke="#9194A7" strokeWidth="3" />
+            <ChevronRightIcon width={20} stroke="#9194A7" strokeWidth="3" />
           </MiniCardRightBox>
         </MiniCard>
         <MiniCard>
@@ -237,7 +236,7 @@ function StatusCard() {
           </MiniCardLeftText>
           <MiniCardRightBox>
             <MiniCardRightText>Alarme</MiniCardRightText>
-            <ChevronRightIcon width={18} stroke="#9194A7" strokeWidth="3" />
+            <ChevronRightIcon width={20} stroke="#9194A7" strokeWidth="3" />
           </MiniCardRightBox>
         </MiniCard>
       </BottomBox>
