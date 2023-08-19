@@ -24,16 +24,16 @@ import { CalendarIcon } from "@heroicons/react/solid";
 import theme from "@/helpers/theme";
 
 const Container = styled(Box)(({ theme }) => ({
-  height: "56px",
+  minHeight: "56px",
   backgroundColor: "#EFF2F4",
   padding: "12.5px 13px",
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
-  borderBottom: "2px solid #CFD4E5",
+  borderBottom: "1px solid #CFD4E5",
   [theme.breakpoints.down("laptop")]: {
     flexDirection: "column",
-    height: "auto",
+    minHeight: "auto",
     gap: "10px",
   },
 }));
