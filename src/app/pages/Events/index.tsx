@@ -21,6 +21,7 @@ import AvailabilityGraph from "@/components/Graphs/Availability";
 import BasicTable from "@/components/Table";
 import MostActivatedAlarms from "@/components/Graphs/MostActivatedAlarms";
 import MostDowntimeAssets from "@/components/Graphs/MostDowntimeAssets";
+import theme from "@/helpers/theme";
 
 const SummaryBox = styled(Box)(({ theme }) => ({
   display: "flex",
@@ -180,11 +181,12 @@ const CurrentValueText = styled(Typography)(({ theme }) => ({
 
 const CurrentValueNumber = styled(Typography)(({ theme }) => ({
   fontWeight: 600,
-  fontSize: "24px",
+  fontSize: "28px",
   lineHeight: "33px",
   color: "#0B1C2C",
+  whiteSpace: "nowrap",
   [theme.breakpoints.down("desktop")]: {
-    fontSize: "17px",
+    fontSize: "20px",
     lineHeight: "26px",
   },
   [theme.breakpoints.down("tablet")]: {
@@ -241,7 +243,7 @@ const GraphTitle = styled(Typography)(({ theme }) => ({
   fontSize: "12px",
   lineHeight: "14px",
   color: "#0B1C2C",
-  [theme.breakpoints.down("desktop")]: {
+  [theme.breakpoints.down("laptop")]: {
     fontSize: "10px",
     lineHeight: "12px",
   },
@@ -273,7 +275,7 @@ const NewOccurrencesGraphBox = styled(Box)(({ theme }) => ({
   justifyContent: "center",
   width: "50%",
   height: "100%",
-  [theme.breakpoints.down("tablet")]: {
+  [theme.breakpoints.down("desktop")]: {
     width: "100%",
   },
 }));
@@ -291,28 +293,32 @@ const StyledCardContent = styled(CardContent)(({ theme }) => ({
   },
 }));
 
+export const Container = styled(Box)(({ theme }) => ({
+  display: "flex",
+  flexDirection: "column",
+  width: "60%",
+  height: "100%",
+  padding: "25px 17px",
+  overflowY: "auto",
+  "&::-webkit-scrollbar": {
+    width: "8px",
+  },
+  "&::-webkit-scrollbar-track": {
+    backgroundColor: "#8C97A1",
+  },
+  "&::-webkit-scrollbar-thumb": {
+    backgroundColor: "#4A4754",
+    borderRadius: "8px",
+  },
+  [theme.breakpoints.down("laptop")]: {
+    width: "100%",
+    height: "100%",
+  },
+}));
+
 export default function EventsPage() {
   return (
-    <Grid
-      item
-      desktop={6.5}
-      laptop={6.5}
-      tablet={12}
-      mobileLarge={12}
-      mobileSmall={12}
-      sx={{
-        padding: "25px 17px",
-        overflowY: "auto",
-        height: {
-          desktop: "100%",
-          laptop: "100%",
-          tablet: "50%",
-          mobileLarge: "100%",
-          mobileMedium: "100%",
-          mobileSmall: "100%",
-        },
-      }}
-    >
+    <Container>
       <Typography
         sx={{
           fontWeight: 500,
@@ -487,8 +493,8 @@ export default function EventsPage() {
                   },
                   flexDirection: {
                     desktop: "row",
-                    laptop: "row",
-                    tablet: "row",
+                    laptop: "column",
+                    tablet: "column",
                     mobileLarge: "column",
                     mobileMedium: "column",
                     mobileSmall: "column",
@@ -512,6 +518,6 @@ export default function EventsPage() {
           }
         />
       </Box>
-    </Grid>
+    </Container>
   );
 }

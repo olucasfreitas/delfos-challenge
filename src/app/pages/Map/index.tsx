@@ -1,28 +1,20 @@
 import StatusCard from "@/components/StatusCard";
-import { Grid } from "@mui/material";
+import { Box, styled } from "@mui/material";
+import { Container } from "../Events";
+
+export const MapContainer = styled(Container)(({ theme }) => ({
+  width: "60%",
+  height: "100%",
+  backgroundColor: "darkgray",
+  padding: "0",
+  overflow: "hidden",
+  position: "relative",
+}));
 
 export default function MapPage() {
   return (
-    <Grid
-      item
-      desktop={5.5}
-      laptop={5.5}
-      tablet={12}
-      mobileLarge={12}
-      mobileSmall={12}
-      sx={{
-        height: {
-          desktop: "100%",
-          laptop: "100%",
-          tablet: "50%",
-          mobileLarge: "100%",
-          mobileMedium: "100%",
-          mobileSmall: "100%",
-        },
-        backgroundColor: "royalblue",
-      }}
-    >
+    <MapContainer>
       <StatusCard />
-    </Grid>
+    </MapContainer>
   );
 }

@@ -17,7 +17,7 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   const isMobile = useMediaQuery(theme.breakpoints.down("mobileLarge"));
-  const { isMiniDrawerFixed } = useDrawerStore();
+  const { isMiniDrawerFixed, isMiniDrawerOpen } = useDrawerStore();
 
   return (
     <ThemeProvider theme={theme}>
@@ -28,7 +28,13 @@ export default function RootLayout({ children }: RootLayoutProps) {
               sx={{
                 display: "flex",
                 height: "100vh",
-                paddingLeft: isMiniDrawerFixed || isMobile ? "0" : "56px",
+                overflow: "hidden",
+                paddingLeft:
+                  isMiniDrawerOpen && isMiniDrawerFixed
+                    ? "240px"
+                    : isMobile
+                    ? "0px"
+                    : "56px",
               }}
             >
               <MiniDrawer />

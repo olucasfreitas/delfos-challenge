@@ -11,7 +11,7 @@ import MapPage from "../pages/Map";
 import theme from "@/helpers/theme";
 
 export default function Highlights() {
-  const isMobile = useMediaQuery(theme.breakpoints.down("tablet"));
+  const isMobile = useMediaQuery(theme.breakpoints.down("laptop"));
 
   return (
     <Box
@@ -25,22 +25,20 @@ export default function Highlights() {
       <TopBar />
       {isMobile && <MobileTabs />}
       {!isMobile && (
-        <Grid
-          container
-          columns={12}
+        <Box
           sx={{
-            height: {
-              desktop: "100%",
-              laptop: "100%",
-              tablet: "100%",
-              mobileLarge: "100%",
-              mobileSmall: "100%",
+            display: "flex",
+            width: "100%",
+            height: "100%",
+            overflow: "hidden",
+            [theme.breakpoints.down("laptop")]: {
+              flexDirection: "column",
             },
           }}
         >
           <MapPage />
           <EventsPage />
-        </Grid>
+        </Box>
       )}
     </Box>
   );
