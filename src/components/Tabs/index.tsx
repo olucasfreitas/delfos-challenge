@@ -19,10 +19,10 @@ function CustomTabPanel({
     <Box
       role="tabpanel"
       hidden={value !== index}
-      sx={{ height: "100%" }}
+      sx={{ height: "100%", overflow: "hidden" }}
       {...other}
     >
-      {value === index && <Box sx={{ height: "100%" }}>{children}</Box>}
+      {value === index && children}
     </Box>
   );
 }
@@ -36,6 +36,7 @@ export default function MobileTabs() {
         value={value}
         onChange={(event, newValue) => setValue(newValue)}
         variant="fullWidth"
+        sx={{ display: "flex", flex: "1", overflow: "hidden" }}
       >
         <Tab label="Mapa" />
         <Tab label="Eventos" />
