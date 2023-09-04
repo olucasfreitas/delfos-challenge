@@ -44,6 +44,8 @@ export default function AvailabilityGraph() {
           dashStyle: "shortdot",
         },
       ],
+      min: 0,
+      max: 100,
     },
     xAxis: {
       lineWidth: 0,
@@ -71,7 +73,7 @@ export default function AvailabilityGraph() {
     },
     plotOptions: {
       column: {
-        stacking: "percent",
+        stacking: "normal",
       },
       series: {
         pointWidth: 87,
@@ -79,11 +81,11 @@ export default function AvailabilityGraph() {
     },
     series: [
       {
-        data: [100, 100, 100, 100, 100, 100],
+        data: [100, 30, 100, 100, 50, 70],
         color: "#ECEDEF",
       },
       {
-        data: [0, 200, 0, 0, 150, 100],
+        data: [0, 70, 0, 0, 50, 30],
         color: "#F42829",
       },
     ],
@@ -91,23 +93,23 @@ export default function AvailabilityGraph() {
       rules: [
         {
           condition: {
-            maxWidth: theme.breakpoints.values.desktop,
+            maxWidth: 800,
           },
           chartOptions: {
             chart: {
-              height: 130 + 20,
-              spacing: 20,
+              height: 130 + 15,
+              spacing: 15,
             },
             plotOptions: {
               series: {
-                pointWidth: 50,
+                pointWidth: 53,
               },
             },
           },
         },
         {
           condition: {
-            maxWidth: theme.breakpoints.values.mobileMedium,
+            maxWidth: 500,
           },
           chartOptions: {
             chart: {

@@ -11,6 +11,7 @@ const MUIAccordion = styled((props: AccordionProps) => (
   <MuiAccordion disableGutters elevation={0} {...props} />
 ))(({ theme }) => ({
   border: `1px solid #CFD4E5`,
+  width: "100%",
 }));
 
 const AccordionSummary = styled((props: AccordionSummaryProps) => (
